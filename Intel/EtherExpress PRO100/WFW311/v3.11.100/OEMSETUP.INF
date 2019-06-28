@@ -1,0 +1,27 @@
+;; Windows for Workgroups 3.11
+;; OEMSETUP.INF for the EtherExpress PRO/100 adapter
+
+[data]
+type=network
+version="3.11.100"
+
+[disks]
+y = \wfw, "EtherExpress PRO/100 WfW 3.11 driver disk", e100.386
+z = \ndis, "EtherExpress NDIS 2.0 driver disk", e100.dos
+
+[netcard]
+ms$e100="Intel EtherExpress PRO/100",0,ndis,ethernet,0x7,ms$e100,ms$e100_nif
+
+;; Intel EtherExpress PRO/100
+
+[ms$e100]
+ndis2=z:e100.dos
+ndis3=y:e100.386
+mlid=*:e100odi.com
+
+[ms$e100_nif]
+Drivername=E100$
+;;slot=Slot,"Eisa Slot Number",hex,"0x1,0x10,0x1",0x2,0x3c
+param=Speed,"Line Speed (Mbits/sec)",text,"Auto-Speed,10,100","Auto-Speed",0x3c
+param=BusTypeLocal,"Bus Type (eisa=2, pci=5)",text,"2,5","5",0x3c
+
