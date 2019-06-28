@@ -1,0 +1,61 @@
+**
+**
+**  VIA Rhine Family Fast Ethernet Adapter
+**
+**  NDIS Driver for Windows for WorkGroup 3.11
+**
+**  v3.12   Nov. 2003
+**
+**
+
+Introduction:
+=============
+
+  This document shows you how to install Windows for Workgroup 3.11 NDIS 
+  driver.
+
+
+Contents of the Subdirectory:
+=============================
+
+    FETND3F.386         The enhanced mode NDIS3 driver.
+    FETND.DOS           The real mode NDIS2 driver.
+    FETODI.COM          The real mode ODI driver.
+    OEMSETUP.INF        The setup information file for WFW311.
+    WFW311.TXT          This file.
+
+
+
+Installation:
+=============
+
+  Before starting with the installation process, make sure that the adapter
+  is properly installed and configured. You can use the diagnostic program
+  (A:\SETUP.EXE) to make sure your connection with the network is correct.
+
+  Setup Procedure:
+  ----------------
+
+    1) Start the Windows for Workgroup 3.11.
+
+    2) Click the "Network" icon in the Program Manager Window.
+
+    3) Click the "Network Setup" icon in the Network Window.
+
+    4) When the "Network Setup" dialog box appears, select "Drivers..." button.
+
+    5) Select "Add Adapters..." from the "Network Drivers" dialog box.
+
+    6) Select "Unlisted or Updated Network Adapter".
+
+    7) When the "Install Driver" window appears, insert the distribution
+       diskette into drive A:, type "A:\WFW311" and press <Enter>.
+
+    8) Select the right adapter from menu and press <Enter>.
+
+    9) Click "Setup..." if you want to modify the advanced features.
+
+   10) Close each windows and restart the computer.
+
+
+

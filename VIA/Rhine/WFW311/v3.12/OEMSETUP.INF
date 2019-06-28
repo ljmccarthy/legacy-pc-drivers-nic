@@ -1,0 +1,148 @@
+; 
+;  Purpose: Netcard setup information file for WFW311
+;
+;  Author:  Charles Yu
+; 
+;  Date:    Nov, 2003
+; 
+ 
+[data]
+type=network
+; VERSION.... 3.12
+version=3.11.312
+
+[disks]
+; source disk
+1=.,"VIA Rhine Family Fast Ethernet Adapter Driver Disk", fetnd3f.386
+
+[netcard]
+; OEM....
+;   key = description, MSID, type, media, mode, install, protini, style
+fet$3043="VIA VT86C100A Rhine Fast Ethernet Adapter",0,ndis,ethernet,0x07,fet$nd3f,fet$3043_nif
+fet$3065="VIA Rhine II Fast Ethernet Adapter",0,ndis,ethernet,0x07,fet$nd3f,fet$3065_nif
+fet$3106J="VIA Rhine III Fast Ethernet Adapter",0,ndis,ethernet,0x07,fet$nd3f,fet$3106J_nif
+fet$3106S="VIA Rhine III Management Adapter",0,ndis,ethernet,0x07,fet$nd3f,fet$3106S_nif
+
+
+
+[fet$nd3f]
+ndis3=1:fetnd3f.386
+ndis2=1:fetnd.dos
+mlid=*:fetodi.com
+
+[fet$3106J_nif]
+; NDIS2 driver parameters:
+drivername=FETND$,0x10
+param=FULLDUPLEX,"[NDIS2] DUPLEX MODE",enum,"Half_Duplex,0,Full_Duplex,1",0,0x10
+param=SPEED,"[NDIS2] SPEED MODE",enum,"10M,10,100M,100",100,0x10
+param=AUTO,"[NDIS2] AUTO MODE",enum,"Auto-Negotiation,1,Force-Mode,0",1,0x10
+param=SLOT,"[NDIS2] SLOT NUMBER",int,"1,16,1",1,0x10
+
+; NDIS3 driver parameters:
+param=AdapterCFID,"Adapter CFID",static,"822481158",,0x20
+param=AdapterType,"Adapter Type",static,"5",,0x20
+param=MediaType,"Media Type",static,"1",,0x20
+param=BusType,"Bus Type",static,"5",,0x20
+; WFW_311
+param=OsId,"Os Id",static,"00000002",,0x20
+param=ConnectionType,"[NDIS3] Connection Type",enum,"Auto-Negotiation,0,100BaseTx Half_Duplex,1,100BaseTx Full_Duplex,2, 10BaseT   Half_Duplex,3, 10BaseT Full_Duplex,4",0,0x20
+; 
+param=ReceiveBuffers,"Receive Buffers",static,"64",,0x20
+param=TransmitBuffers,"Transmit Buffers",static,"32",,0x20
+param=ReceiveThreshold,"Receive Threshold",static,"0",,0x20
+param=TransmitThreshold,"Transmit Threshold",static,"0",,0x20
+param=BurstLength,"Burst Length",static,"1",,0x20
+param=MapRegisters,"Map Registers",static,"16",,0x20
+param=EarlyReceive,"Early Receive",static,"0",,0x20
+param=EarlyTransmit,"Early Transmit",static,"0",,0x20
+param=NwayForce,"Nway Force",static,"1",,0x20
+param=FlowCtrl,"[NDIS3] Flow Control",enum,"Hardware_Default,0,Disable,1,Enable,2",0,0x20
+param=ValPktLen,"Validate Packet Length",static,"0",,0x20
+
+
+[fet$3106S_nif]
+; NDIS2 driver parameters:
+drivername=FETND$,0x10
+param=FULLDUPLEX,"[NDIS2] DUPLEX MODE",enum,"Half_Duplex,0,Full_Duplex,1",0,0x10
+param=SPEED,"[NDIS2] SPEED MODE",enum,"10M,10,100M,100",100,0x10
+param=AUTO,"[NDIS2] AUTO MODE",enum,"Auto-Negotiation,1,Force-Mode,0",1,0x10
+param=SLOT,"[NDIS2] SLOT NUMBER",int,"1,16,1",1,0x10
+
+; NDIS3 driver parameters:
+param=AdapterCFID,"Adapter CFID",static,"810750214",,0x20
+param=AdapterType,"Adapter Type",static,"5",,0x20
+param=MediaType,"Media Type",static,"1",,0x20
+param=BusType,"Bus Type",static,"5",,0x20
+; WFW_311
+param=OsId,"Os Id",static,"00000002",,0x20
+param=ConnectionType,"[NDIS3] Connection Type",enum,"Auto-Negotiation,0,100BaseTx Half_Duplex,1,100BaseTx Full_Duplex,2, 10BaseT   Half_Duplex,3, 10BaseT Full_Duplex,4",0,0x20
+; 
+param=ReceiveBuffers,"Receive Buffers",static,"64",,0x20
+param=TransmitBuffers,"Transmit Buffers",static,"32",,0x20
+param=ReceiveThreshold,"Receive Threshold",static,"0",,0x20
+param=TransmitThreshold,"Transmit Threshold",static,"0",,0x20
+param=BurstLength,"Burst Length",static,"1",,0x20
+param=MapRegisters,"Map Registers",static,"16",,0x20
+param=EarlyReceive,"Early Receive",static,"0",,0x20
+param=EarlyTransmit,"Early Transmit",static,"0",,0x20
+param=NwayForce,"Nway Force",static,"1",,0x20
+param=FlowCtrl,"[NDIS3] Flow Control",enum,"Hardware_Default,0,Disable,1,Enable,2",0,0x20
+param=ValPktLen,"Validate Packet Length",static,"0",,0x20
+
+
+[fet$3065_nif]
+; NDIS2 driver parameters:
+drivername=FETND$,0x10
+param=FULLDUPLEX,"[NDIS2] DUPLEX MODE",enum,"Half_Duplex,0,Full_Duplex,1",0,0x10
+param=SPEED,"[NDIS2] SPEED MODE",enum,"10M,10,100M,100",100,0x10
+param=AUTO,"[NDIS2] AUTO MODE",enum,"Auto-Negotiation,1,Force-Mode,0",1,0x10
+param=SLOT,"[NDIS2] SLOT NUMBER",int,"1,16,1",1,0x10
+
+; NDIS3 driver parameters:
+param=AdapterCFID,"Adapter CFID",static,"811929862",,0x20
+param=AdapterType,"Adapter Type",static,"5",,0x20
+param=MediaType,"Media Type",static,"1",,0x20
+param=BusType,"Bus Type",static,"5",,0x20
+; WFW_311
+param=OsId,"Os Id",static,"00000002",,0x20
+param=ConnectionType,"[NDIS3] Connection Type",enum,"Auto-Negotiation,0,100BaseTx Half_Duplex,1,100BaseTx Full_Duplex,2, 10BaseT   Half_Duplex,3, 10BaseT Full_Duplex,4",0,0x20
+; 
+param=ReceiveBuffers,"Receive Buffers",static,"64",,0x20
+param=TransmitBuffers,"Transmit Buffers",static,"32",,0x20
+param=ReceiveThreshold,"Receive Threshold",static,"0",,0x20
+param=TransmitThreshold,"Transmit Threshold",static,"0",,0x20
+param=BurstLength,"Burst Length",static,"1",,0x20
+param=MapRegisters,"Map Registers",static,"16",,0x20
+param=EarlyReceive,"Early Receive",static,"0",,0x20
+param=EarlyTransmit,"Early Transmit",static,"0",,0x20
+param=NwayForce,"Nway Force",static,"1",,0x20
+param=FlowCtrl,"[NDIS3] Flow Control",enum,"Hardware_Default,0,Disable,1,Enable,2",0,0x20
+param=ValPktLen,"Validate Packet Length",static,"0",,0x20
+
+
+[fet$3043_nif]
+; NDIS2 driver parameters:
+drivername=FETND$,0x10
+param=FULLDUPLEX,"[NDIS2] DUPLEX MODE",enum,"Half_Duplex,0,Full_Duplex,1",0,0x10
+param=SPEED,"[NDIS2] SPEED MODE",enum,"10M,10,100M,100",100,0x10
+param=AUTO,"[NDIS2] AUTO MODE",enum,"Auto-Negotiation,1,Force-Mode,0",1,0x10
+param=SLOT,"[NDIS2] SLOT NUMBER",int,"1,16,1",1,0x10
+
+; NDIS3 driver parameters:
+param=AdapterCFID,"Adapter CFID",static,"809701638",,0x20
+param=AdapterType,"Adapter Type",static,"5",,0x20
+param=MediaType,"Media Type",static,"1",,0x20
+param=BusType,"Bus Type",static,"5",,0x20
+; WFW_311
+param=OsId,"Os Id",static,"00000002",,0x20
+param=ConnectionType,"[NDIS3] Connection Type",enum,"Auto-Negotiation,0,100BaseTx Half_Duplex,1,100BaseTx Full_Duplex,2, 10BaseT   Half_Duplex,3, 10BaseT   Full_Duplex,4",0,0x20
+; 
+param=ReceiveBuffers,"Receive Buffers",static,"64",,0x20
+param=TransmitBuffers,"Transmit Buffers",static,"8",,0x20
+param=ReceiveThreshold,"Receive Threshold",static,"0",,0x20
+param=TransmitThreshold,"Transmit Threshold",static,"0",,0x20
+param=BurstLength,"Burst Length",static,"1",,0x20
+param=MapRegisters,"Adapter Type",static,"8",,0x20
+param=EarlyReceive,"Early Receive",static,"0",,0x20
+param=EarlyTransmit,"Adapter Type",static,"0",,0x20
+param=ValPktLen,"Validate Packet Length",static,"0",,0x20
